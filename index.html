@@ -10,10 +10,83 @@
 </head>
 
 <body>
-     <h1>🎵 Каталог музыкальных инструментов</h1>
-    <div id="instruments-container">
+    <h1>🎵 Каталог музыкальных инструментов</h1>
+    <div class="form-container">
+        <form id="instrument-form">
+            <div class="form-group">
+                <label for="instrument-type">Тип инструмента:</label>
+                <select id="instrument-type" required>
+                    <option value="">-- Выберите тип --</option>
+                    <option value="guitar">Гитара</option>
+                    <option value="piano">Пианино</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Название:</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="brand">Бренд:</label>
+                <input type="text" id="brand" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Цена (руб.):</label>
+                <input type="number" id="price" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="type">Категория:</label>
+                <input type="text" id="type" required>
+            </div>
+            <div id="guitar-fields" class="instrument-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="strings-count">Количество струн:</label>
+                    <input type="number" id="strings-count" min="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="guitar-type">Тип гитары:</label>
+                    <input type="text" id="guitar-type">
+                </div>
+            </div>
+
+            <div id="piano-fields" class="instrument-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="keys-count">Количество клавиш:</label>
+                    <input type="number" id="keys-count" min="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="piano-type">Тип пианино:</label>
+                    <input type="text" id="piano-type">
+                </div>
+            </div>
+
+            <button type="submit">Сохранить</button>
+        </form>
     </div>
-<script src="script.js"></script>
+
+    <div class="table-container">
+        <table id="instruments-table">
+            <thead>
+                <tr>
+                    <th>Тип</th>
+                    <th>Название</th>
+                    <th>Бренд</th>
+                    <th>Цена</th>
+                    <th>Категория</th>
+                    <th>Детали</th>
+                    <th>Действие</th>
+                </tr>
+            </thead>
+            <tbody id="instruments-tbody">
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
